@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Animation</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      height: 100vh;
+      background-color: #f8f8f8;
+      overflow: hidden;
+    }
+    #welcomeText {
+      opacity: 0;
+      font-size: 48px;
+      text-align: center;
+      color: #3e4152; /* Text color */
+      font-weight: 700; /* Bold font */
+      text-transform: uppercase; /* Convert text to uppercase */
+      font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica', 'Arial', sans-serif; /* Custom font */
+      animation: fadeIn 2s ease forwards, fadeOut 2s ease forwards 2s; /* Animation */
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    #welcomeText span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(-100%);
+      animation: slideIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="welcomeText">
+      <span>W&nbsp;</span>
+      <span>e&nbsp;</span>
+      <span>l&nbsp;</span>
+      <span>c&nbsp;</span>
+      <span>o&nbsp;</span>
+      <span>m&nbsp;</span>
+      <span>e</span>
+      <span>&nbsp;&nbsp;</span>
+      <span>t</span>
+      <span>o</span>
+      <span>&nbsp;&nbsp;</span>
+      <span><span style="color: #ff61ab;">M</span></span>
+      <span><span style="color: #ff6f61;">I</span></span>
+      <span>&nbsp;</span>
+      <span>F&nbsp;</span>
+      <span>o&nbsp;</span>
+      <span>o&nbsp;</span>
+      <span>t&nbsp;</span>
+      <span>w&nbsp;</span>
+      <span>e&nbsp;</span>
+      <span>a&nbsp;</span>
+      <span>r&nbsp;</span>
+    </h1>
+  </div>
+  <script>
+    // Wait for the animation to finish, then redirect
+    const welcomeText = document.getElementById('welcomeText');
+    
+    // Get the total duration of the animation to set timeout
+    const animationDuration = 4000; // 2s (fadeIn) + 2s (fadeOut)
+    
+    // Function to redirect to a new webpage
+    function redirectToNewPage() {
+      window.location.href = 'http://127.0.0.1:5500/Website2/Home%20page/main_page.html'; // Replace with your relative file path
+    }
+    
+    // Wait for animation to complete and then redirect
+    setTimeout(redirectToNewPage, animationDuration);
+  </script>
+  
+</body>
+</html>
